@@ -53,8 +53,6 @@ function App() {
               />
             )
           })}
-
-          <BudgetCard name="Entertainment" amount={200} max={1000} gray />
         </div>
       </Container>
       <AddBudgetModal
