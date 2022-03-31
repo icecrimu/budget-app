@@ -1,15 +1,20 @@
+import { useState } from "react"
 import { Container, Stack, Button } from "react-bootstrap"
 
 import AddBudgetModal from "./components/AddBudgetModal"
 import BudgetCard from "./components/BudgetCard"
 
 function App() {
+  const [showAddBudgetModal, setShowAddBudgetModal] = useState()
+
   return (
     <>
       <Container className="my-4">
         <Stack direction="horizontal" gap={2} className="mb-4">
           <h1 className="me-auto">Budgets</h1>
-          <Button variant="primary">Add Budget</Button>
+          <Button variant="primary" onClick={() => setShowAddBudgetModal(true)}>
+            Add Budget
+          </Button>
           <Button variant="outline-primary">Add Expense</Button>
         </Stack>
 
@@ -29,7 +34,10 @@ function App() {
           ></BudgetCard>
         </div>
       </Container>
-      <AddBudgetModal show="true" />
+      <AddBudgetModal
+        show={showAddBudgetModal}
+        handleClose={() => setShowAddBudgetModal(false)}
+      />
     </>
   )
 }
