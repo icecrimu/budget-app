@@ -81,7 +81,6 @@ function App() {
 
       <ViewExpensesModal
         budgetId={viewExpensesModalBudgetId}
-        defaultBudgetId={addExpenseModalBudgetId}
         handleClose={() => setViewExpensesModalBudgetId()}
       />
     </>
